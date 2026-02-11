@@ -108,7 +108,7 @@
         <button class="btn-copy" onclick="copy('user-display')" style="color: #4fd1c5; margin-left: 10px;"><i class="fa-regular fa-copy"></i></button>
     </div>
 
-    <a href="https://t.me/streamofficialadmin?text=I%20have%20paid%20N12,000%20for%20Stream%20activation.%20My%20Username:%20" id="telegram-link" class="btn-telegram">
+    <a href="https://t.me/streamofficialadmin?text=Hi%20STREAM_AFRICA%2C%20I%20have%20paid%20for%20STREAM_PASS%2C%20here%20is%20my%20payment%20proof" id="telegram-link" class="btn-telegram">
         <i class="fa-brands fa-telegram"></i> CONFIRM PAYMENT ON TELEGRAM
     </a>
 
@@ -119,7 +119,7 @@
         document.getElementById('user-display').innerText = '@' + user;
     
         const telegramBase = "https://t.me/streamofficialadmin?text=";
-        const msg = encodeURIComponent(`Hi Admin, I have just paid ₦12,000 for my Stream Premium activation. My username is @${user}`);
+        const msg = encodeURIComponent(`https://t.me/streamofficialadmin?text=Hi%20STREAM_AFRICA%2C%20I%20have%20paid%20for%20STREAM_PASS%2C%20here%20is%20my%20payment%20proof`);
         document.getElementById('telegram-link').href = telegramBase + msg;
         let time = 600; 
         const timerEl = document.getElementById('timer');
