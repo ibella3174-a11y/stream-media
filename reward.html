@@ -185,7 +185,6 @@
 </div>
   </div>
 <script>
-   // password toggle
   document.getElementById("togglePass").onclick = function() {
     const input = document.getElementById("password");
     const icon = this.querySelector("i");
@@ -206,7 +205,6 @@
     let phone = document.getElementById("phone").value.trim();
     let email = document.getElementById("email").value.trim();
     let pass = document.getElementById("password").value.trim();
-    // Get the selected plan text (e.g., "Stream Premium – ₦12,000")
     let planElement = document.getElementById("plan");
     let selectedPlan = planElement.options[planElement.selectedIndex].text;
 
@@ -228,11 +226,7 @@
     else document.getElementById("errPass").style.display = "none";
 
     if (!valid) return;
-
-    // Save the name to localStorage just like before
     localStorage.setItem("userFullName", name);
-
-    // Build the URL with the user's data to show on the confirmation page
     const queryParams = new URLSearchParams({
         fullname: name,
         username: user,
@@ -240,8 +234,6 @@
         email: email,
         plan: selectedPlan
     }).toString();
-
-    // Change "confirm.html" to whatever you named that second page!
     window.location.href = "confirm.html?" + queryParams;
   }
 
