@@ -73,7 +73,7 @@
         </div>
     </div>
 
-    <a href="payment_gateway.html" id="pay-link" class="btn-pay">PAY ₦12,000 NOW</a>
+    <a href="payment.html" id="pay-link" class="btn-pay">PAY ₦12,000 NOW</a>
     <button class="btn-edit" onclick="history.back()">Back to Edit</button>
 
     <div id="pay-toast" class="toast">
@@ -92,8 +92,6 @@
         document.getElementById('res-user').innerText = '@' + (urlParams.get('username') || 'user');
         document.getElementById('res-email').innerText = urlParams.get('email') || 'N/A';
         document.getElementById('res-phone').innerText = urlParams.get('phone') || 'N/A';
-
-        // Fake Payment Toast Notifications
         function showPaymentToast() {
             const users = ["Chidi E.", "Amaka W.", "Blessing O.", "Tunde A.", "Musa Y.", "Sarah J."];
             const name = users[Math.floor(Math.random()*users.length)];
