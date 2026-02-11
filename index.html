@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            /* NEW COLOR PALETTE applied here */
-            --primary-accent: #00f2ff; /* Neon Aqua Glow */
-            --primary-green: #00f2ff;  /* Overriding your green variable with the new accent */
+            --primary-accent: #00f2ff; 
+            --primary-green: #00f2ff; 
             --dark-bg: #000b02;
             --primary-teal: #013740;
             --glass: rgba(255, 255, 255, 0.05);
@@ -20,7 +19,6 @@
         body {
             margin: 0;
             padding: 0;
-            /* Updated to the Deep Teal Gradient */
             background: radial-gradient(circle at top, #013740 0%, #000000 100%);
             font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
             color: white;
@@ -36,11 +34,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 5%;
-            background: rgba(1, 55, 64, 0.8); /* Teal Glass */
+            background: rgba(1, 55, 64, 0.8); 
             backdrop-filter: blur(20px);
             z-index: 1000;
             box-sizing: border-box;
-            /* Border updated to Neon Aqua */
             border-bottom: 2px solid var(--primary-accent);
         }
 
@@ -54,7 +51,6 @@
         .logo-img {
             height: 45px;
             width: auto;
-            /* Shadow updated to Aqua */
             filter: drop-shadow(0 0 10px rgba(0, 242, 255, 0.6));
         }
 
@@ -67,7 +63,6 @@
         }
 
         .main-join-btn {
-            /* Updated to the Neon button style */
             background: white;
             color: #013740;
             padding: 12px 25px;
@@ -96,7 +91,6 @@
             margin-top: 130px;
             margin-bottom: 40px;
             background: var(--glass);
-            /* Border updated to Aqua */
             border: 2px solid var(--primary-accent);
             border-radius: 24px;
             padding: 20px;
@@ -127,8 +121,6 @@
             display: flex;
             flex-direction: column;
         }
-
-        /* Hover updated to Aqua */
         .work-box:hover { border-color: var(--primary-accent); transform: translateY(-10px); }
 
         .work-box img {
@@ -162,13 +154,10 @@
             .logo-text { font-size: 22px; }
             .logo-img { height: 35px; }
         }
-        /* --- FAQ --- */
         .faq-section { margin-bottom: 100px; }
         details { background: var(--glass); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; }
         summary { padding: 20px; cursor: pointer; font-weight: 800; display: flex; justify-content: space-between; }
         summary::after { content: "+"; color: var(--primary-accent); }
-
-        /* --- FOOTER --- */
         .main-footer { background: #000; padding: 80px 0 40px; border-top: 1px solid var(--border); }
         .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
         .footer-column ul { list-style: none; padding: 0; }
@@ -257,7 +246,6 @@
     </div>
     
     <style>
-    /* Fixed Pricing CSS */
     .plan-container {
         text-align: center;
         padding: 60px 0;
@@ -272,7 +260,7 @@
         margin: 0 auto;
         position: relative;
         box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-        box-sizing: border-box; /* This prevents the button from going outside */
+        box-sizing: border-box; 
     }
 
     .badge {
@@ -332,12 +320,12 @@
         background: linear-gradient(90deg, #4fd1c5, #2fb8a6);
         color: #000;
         text-decoration: none;
-        padding: 18px 0; /* Changed to 0 on sides to ensure centering */
+        padding: 18px 0; 
         border-radius: 15px;
         font-weight: 800;
         font-size: 16px;
         transition: transform 0.2s;
-        box-sizing: border-box; /* Keeps button inside card */
+        box-sizing: border-box;
         text-align: center;
     }
 
@@ -366,7 +354,7 @@
                 <li><i class="fa-solid fa-circle-check"></i> Skill-Up Courses: UNLOCKED</li>
             </ul>
 
-            <a href="registration.html" class="reg-btn">Register Stream Premium</a>
+            <a href="reward.html" class="reg-btn">Register Stream Premium</a>
         </div>
     </section>
 </div>
