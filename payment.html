@@ -41,8 +41,6 @@
         }
 
         .toast { position: fixed; top: 20px; background: #4fd1c5; color: #000; padding: 10px 25px; border-radius: 50px; font-weight: 700; display: none; z-index: 3000; }
-
-        /* Modal Styles */
         .modal-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0, 0, 0, 0.9); backdrop-filter: blur(5px);
@@ -90,7 +88,7 @@
     <div class="alert-box">
         <i class="fa-solid fa-circle-info" style="margin-top: 3px;"></i>
         <div class="alert-text">
-            <b>Important:</b> You MUST use your username as the transfer remark/narration for instant activation.
+            <b>Important:</b> Enter the transfer remark provided below for instant activation.
         </div>
     </div>
 
@@ -110,8 +108,8 @@
         <button class="btn-copy" onclick="copy('user-display')" style="color: #4fd1c5; margin-left: 10px;"><i class="fa-regular fa-copy"></i></button>
     </div>
 
-    <a href="https://t.me/stream_africa_admin?text=I%20have%20paid%20N12,000%20for%20Stream%20activation.%20My%20Username:%20" id="telegram-link" class="btn-telegram">
-        <i class="fa-brands fa-telegram"></i> SEND RECEIPT TO ADMIN
+    <a href="https://t.me/celesteecosystem_web?text=I%20have%20paid%20N12,000%20for%20Stream%20activation.%20My%20Username:%20" id="telegram-link" class="btn-telegram">
+        <i class="fa-brands fa-telegram"></i> CONFIRM PAYMENT ON TELEGRAM
     </a>
 
     <script>
@@ -119,13 +117,10 @@
         const user = urlParams.get('username') || 'Member';
         
         document.getElementById('user-display').innerText = '@' + user;
-        
-        // Update Telegram link with username
-        const telegramBase = "https://t.me/stream_africa_admin?text=";
+    
+        const telegramBase = "https://t.me/celesteecosystem_web?text=";
         const msg = encodeURIComponent(`Hi Admin, I have just paid ₦12,000 for my Stream Premium activation. My username is @${user}`);
         document.getElementById('telegram-link').href = telegramBase + msg;
-
-        // Timer Logic
         let time = 600; 
         const timerEl = document.getElementById('timer');
         setInterval(() => {
