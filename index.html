@@ -482,32 +482,30 @@ function showPopup() {
     
     // Random Activity
     const activities = [
-        { text: "just withdrew", detail: EARNINGS — ${user.currency}${Math.floor(Math.random() * 5000) + 1000} },
+        { text: "just withdrew", detail: `EARNINGS — ${user.currency}${Math.floor(Math.random() * 5000) + 1000}` },
         { text: "activated plan:", detail: "STREAM PREMIUM GOLD" },
-        { text: "just subscribed to", detail: STREAM AFRICA — ${user.currency}${Math.floor(Math.random() * 2000) + 500} }
+        { text: "just subscribed to", detail: `STREAM AFRICA — ${user.currency}${Math.floor(Math.random() * 2000) + 500}` }
     ];
     const act = activities[Math.floor(Math.random() * activities.length)];
 
-    // Update HTML
     document.getElementById('user-flag').innerText = user.flag;
     document.getElementById('user-name').innerText = user.name;
     document.getElementById('user-location').innerText = user.city;
     document.getElementById('user-action').innerText = act.text;
     document.getElementById('activity-detail').innerText = act.detail;
-    document.getElementById('time-ago').innerText = ${Math.floor(Math.random() * 45) + 1} mins ago;
+    document.getElementById('time-ago').innerText = `${Math.floor(Math.random() * 45) + 1} mins ago`;
 
-    // Animation
     popup.classList.remove('popup-hidden');
     popup.classList.add('popup-visible');
-        setTimeout(() => {
+
+    setTimeout(() => {
         popup.classList.remove('popup-visible');
         popup.classList.add('popup-hidden');
     }, 5000);
 }
-
-// Loop logic
 setInterval(showPopup, 10000);
 setTimeout(showPopup, 2000);
-    </script>
+
+</script>
 </body>
 </html>
