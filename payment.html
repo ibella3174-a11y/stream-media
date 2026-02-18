@@ -54,25 +54,6 @@
         .modal-title { color: #f85149; font-weight: 800; margin-bottom: 15px; font-size: 20px; }
         .modal-body { font-size: 14px; line-height: 1.6; color: #e6edf3; margin-bottom: 25px; }
         .modal-btn { background: #f85149; color: white; border: none; padding: 15px; border-radius: 8px; font-weight: 700; cursor: pointer; width: 100%; }
-    .btn-toggle {
-    background: rgba(79, 209, 197, 0.1);
-    color: #4fd1c5;
-    border: 1px dashed #4fd1c5;
-    padding: 12px 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    width: 100%;
-    max-width: 380px;
-    transition: 0.3s;
-}
-.btn-toggle:hover {
-    background: rgba(79, 209, 197, 0.2);
-}
-#foreignDetails .bank-card {
-    border: 2px solid #ffcc00;
-}
     </style>
 </head>
 <body>
@@ -111,31 +92,33 @@
         </div>
     </div>
 
-    <div class="bank-card">
-        <span class="bank-name">KUDA MFB</span>
-        <div class="number-box">
-            <span class="acc-number" id="num1">3002736128</span>
-            <button class="btn-copy" onclick="copy('num1')"><i class="fa-regular fa-copy"></i></button>
-        </div>
-        <div class="acc-holder">OZOH CHIDERA</div>
-        <div class="acc-sub">OFFICIAL REVENUE ACCOUNT</div>
+   <div class="bank-card">
+    <span class="bank-name">KUDA MFB</span>
+    <div class="number-box">
+        <span class="acc-number" id="num1">3002736128</span>
+        <button class="btn-copy" onclick="copy('num1')">
+            <i class="fa-regular fa-copy"></i>
+        </button>
     </div>
-
-    <button class="btn-toggle" onclick="toggleForeign()" style="margin-bottom: 20px;">
-    <i class="fa-solid fa-earth-africa"></i> View Foreign Payment Details
-</button>
-
-<div id="foreignDetails" style="display: none; width: 100%; max-width: 380px;">
-    <div class="bank-card" style="background: #ffcc00; color: #000;"> <span class="bank-name"><i class="fa-solid fa-mobile-screen-button"></i> MTN CAMEROON</span>
+    <div class="acc-holder">OZOH CHIDERA</div>
+    <div class="acc-sub">OFFICIAL REVENUE ACCOUNT</div>
+</div>
+<div style="width: 100%; max-width: 380px; margin-top: 15px;">
+    <div class="bank-card" style="background: #ffcc00; color: #000;">
+        <span class="bank-name">
+            <i class="fa-solid fa-mobile-screen-button"></i> MTN CAMEROON
+        </span>
         <div class="number-box">
             <span class="acc-number" id="cam-num">652856398</span>
-            <button class="btn-copy" onclick="copy('cam-num')"><i class="fa-regular fa-copy"></i></button>
+            <button class="btn-copy" onclick="copy('cam-num')">
+                <i class="fa-regular fa-copy"></i>
+            </button>
         </div>
         <div class="acc-holder">BELTUS EBOB</div>
-        <div class="acc-sub">FEE: 12,000 XAF |  ACTIVATION PAYMENT</div>
+        <div class="acc-sub">FEE: 12,000 XAF | ACTIVATION PAYMENT</div>
     </div>
 </div>
-    <div class="remark-section">
+ <div class="remark-section">
         <span class="remark-label">Your Required Transfer Remark:</span>
         <span class="username-hl" id="user-display">@username</span>
         <button class="btn-copy" onclick="copy('user-display')" style="color: #4fd1c5; margin-left: 10px;"><i class="fa-regular fa-copy"></i></button>
@@ -174,14 +157,6 @@
         function closeModal() {
             document.getElementById('warningModal').style.display = 'none';
         }
-        function toggleForeign() {
-    const section = document.getElementById('foreignDetails');
-    if (section.style.display === "none") {
-        section.style.display = "block";
-    } else {
-        section.style.display = "none";
-    }
-}
     </script>
 </body>
 </html>
