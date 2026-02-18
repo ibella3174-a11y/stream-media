@@ -441,73 +441,73 @@
     </footer>
     <script>
 const popup = document.getElementById('popup-container');
+
+// 1. Data Database (15 Nigerians, 15 Cameroonians)
 const users = [
-  { name: "Olakunle", city: "Lagos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Chidi", city: "Enugu", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Amina", city: "Kano", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Blessing", city: "Port Harcourt", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Tunde", city: "Ibadan", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Chinaza", city: "Abuja", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Samuel", city: "Benin City", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Ngozi", city: "Onitsha", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Segun", city: "Abeokuta", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Ibrahim", city: "Kaduna", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Joy", city: "Warri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Emeka", city: "Owerri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Fatima", city: "Sokoto", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Victor", city: "Jos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  { name: "Bukola", city: "Ilorin", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
-  
-  // Cameroon (15)
-  { name: "Pascal", city: "Douala", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Manu", city: "Yaoundé", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Eto'o", city: "Bamenda", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Brenda", city: "Garoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Achille", city: "Bafoussam", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Christelle", city: "Maroua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Fabrice", city: "Ngaoundéré", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Giselle", city: "Kribi", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Henri", city: "Buea", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Isidore", city: "Limbe", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Jean", city: "Dschang", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Kelly", city: "Ebolowa", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Luc", city: "Foumban", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Marie", city: "Bertoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
-  { name: "Nadine", city: "Sangmélima", country: "Cameroon", flag: "🇨🇲", currency: "CFA" }
+    { name: "Olakunle", city: "Lagos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Chidi", city: "Enugu", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Amina", city: "Kano", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Blessing", city: "Port Harcourt", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Tunde", city: "Ibadan", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Chinaza", city: "Abuja", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Samuel", city: "Benin City", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Ngozi", city: "Onitsha", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Segun", city: "Abeokuta", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Ibrahim", city: "Kaduna", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Joy", city: "Warri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Emeka", city: "Owerri", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Fatima", city: "Sokoto", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Victor", city: "Jos", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Bukola", city: "Ilorin", country: "Nigeria", flag: "🇳🇬", currency: "₦" },
+    { name: "Pascal", city: "Douala", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Manu", city: "Yaoundé", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Eto'o", city: "Bamenda", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Brenda", city: "Garoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Achille", city: "Bafoussam", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Christelle", city: "Maroua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Fabrice", city: "Ngaoundéré", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Giselle", city: "Kribi", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Henri", city: "Buea", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Isidore", city: "Limbe", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Jean", city: "Dschang", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Kelly", city: "Ebolowa", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Luc", city: "Foumban", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Marie", city: "Bertoua", country: "Cameroon", flag: "🇨🇲", currency: "CFA" },
+    { name: "Nadine", city: "Sangmélima", country: "Cameroon", flag: "🇨🇲", currency: "CFA" }
 ];
 
 function showPopup() {
-  // Pick random User
-  const user = users[Math.floor(Math.random() * users.length)];
-  
-  // Random Activity
-  const activities = [
-    { text: "just withdrew", detail: EARNINGS — ${user.currency}${Math.floor(Math.random() * 5000) + 1000} },
-    { text: "activated plan:", detail: "STREAM PREMIUM GOLD" },
-    { text: "just subscribed to", detail: STREAM AFRICA — ${user.currency}${Math.floor(Math.random() * 2000) + 500} }
-  ];
-  const act = activities[Math.floor(Math.random() * activities.length)];
+    // Pick random User
+    const user = users[Math.floor(Math.random() * users.length)];
+    
+    // Random Activity
+    const activities = [
+        { text: "just withdrew", detail: EARNINGS — ${user.currency}${Math.floor(Math.random() * 5000) + 1000} },
+        { text: "activated plan:", detail: "STREAM PREMIUM GOLD" },
+        { text: "just subscribed to", detail: STREAM AFRICA — ${user.currency}${Math.floor(Math.random() * 2000) + 500} }
+    ];
+    const act = activities[Math.floor(Math.random() * activities.length)];
 
-  // Update HTML
-  document.getElementById('user-flag').innerText = user.flag;
-  document.getElementById('user-name').innerText = user.name;
-  document.getElementById('user-location').innerText = user.city;
-  document.getElementById('user-action').innerText = act.text;
-  document.getElementById('activity-detail').innerText = act.detail;
-  document.getElementById('time-ago').innerText = ${Math.floor(Math.random() * 45) + 1} mins ago;
+    // Update HTML
+    document.getElementById('user-flag').innerText = user.flag;
+    document.getElementById('user-name').innerText = user.name;
+    document.getElementById('user-location').innerText = user.city;
+    document.getElementById('user-action').innerText = act.text;
+    document.getElementById('activity-detail').innerText = act.detail;
+    document.getElementById('time-ago').innerText = ${Math.floor(Math.random() * 45) + 1} mins ago;
 
-  // Animation
-  popup.classList.remove('popup-hidden');
-  popup.classList.add('popup-visible');
-
-  setTimeout(() => {
-    popup.classList.remove('popup-visible');
-    popup.classList.add('popup-hidden');
-  }, 5000);
+    // Animation
+    popup.classList.remove('popup-hidden');
+    popup.classList.add('popup-visible');
+        setTimeout(() => {
+        popup.classList.remove('popup-visible');
+        popup.classList.add('popup-hidden');
+    }, 5000);
 }
-    // Loop every 10 seconds
+
+// Loop logic
 setInterval(showPopup, 10000);
 setTimeout(showPopup, 2000);
-</script>
+    </script>
 </body>
 </html>
