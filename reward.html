@@ -140,9 +140,9 @@
         <div class="error-message" id="errPass">Password must be 6+ characters</div>
       </div>
       
-      <label for="plan">Select Plan</label>
+   <label>Select Country</label>
 <div class="input-group">
-  <select id="plan" style="width: 100%;
+  <select id="country" style="width: 100%;
       padding: 0.75rem;
       border-radius: 10px;
       border: 1px solid rgba(255,255,255,0.05);
@@ -150,7 +150,23 @@
       color: var(--text);
       font-size: 1rem;
     ">
-    <option value="12000">Stream Premium  – ₦12,000 /12,000XAF</option>
+    <option value="">Choose country</option>
+    <option value="NG">Nigeria</option>
+    <option value="CM">Cameroon</option>
+    <option value="GH">Ghana</option>
+  </select>
+</div>
+<div class="input-group" id="feeGroup" style="display:none;">
+  <label>Select Plan</label>
+  <select id="fee" disabled style="width: 100%;
+      padding: 0.75rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background: var(--input-bg);
+      color: var(--text);
+      font-size: 1rem;
+    ">
+    <option id="feeOption"></option>
   </select>
 </div>
 
@@ -161,7 +177,7 @@
     margin-top: 0.5rem;
     border: 1px solid rgba(71,163,231,0.06);
 ">
-  <h3 style="margin:0; color:#fff; font-size:1rem;">Premium Plan – ₦12,000 /12,000XAF</h3>
+  <h3 style="margin:0; color:#fff; font-size:1rem;">Premium Plan – ₦12,000</h3>
   <p style="margin:0.5rem 0 0; font-size:0.9rem; color:var(--muted);">
     <del>₦15,000</del>
     <span style="color:#47a3e7; font-weight:600;"> &nbsp; Save ₦3,000</span>
@@ -185,18 +201,6 @@
 </div>
   </div>
 <script>
-  document.getElementById("togglePass").onclick = function() {
-    const input = document.getElementById("password");
-    const icon = this.querySelector("i");
-    if (input.type === "password") {
-      input.type = "text";
-      icon.classList.replace("fa-eye-slash","fa-eye");
-    } else {
-      input.type = "password";
-      icon.classList.replace("fa-eye","fa-eye-slash");
-    }
-  };
-
   document.getElementById("registrationForm").onsubmit = function(e) {
     e.preventDefault();
 
@@ -205,8 +209,17 @@
     let phone = document.getElementById("phone").value.trim();
     let email = document.getElementById("email").value.trim();
     let pass = document.getElementById("password").value.trim();
-    let planElement = document.getElementById("plan");
-    let selectedPlan = planElement.options[planElement.selectedIndex].text;
+    let country = document.getElementById("country").value;
+
+    let selectedPlan = "";
+
+    if (country === "NG") {
+      selectedPlan = "Nigeria – NGN 12,000";
+    } else if (country === "CM") {
+      selectedPlan = "Cameroon – XAF 12,000";
+    } else if (country === "GH") {
+      selectedPlan = "Ghana – GHS 200";
+    }
 
     let valid = true;
 
@@ -225,8 +238,15 @@
     if (pass.length < 6) { document.getElementById("errPass").style.display = "block"; valid=false; }
     else document.getElementById("errPass").style.display = "none";
 
+    if (!country) {
+      alert("Please select your country");
+      return;
+    }
+
     if (!valid) return;
+
     localStorage.setItem("userFullName", name);
+
     const queryParams = new URLSearchParams({
         fullname: name,
         username: user,
@@ -234,11 +254,32 @@
         email: email,
         plan: selectedPlan
     }).toString();
+
     window.location.href = "confirm.html?" + queryParams;
-  }
+  };
+  const countrySelect = document.getElementById("country");
+  const feeGroup = document.getElementById("feeGroup");
+  const feeOption = document.getElementById("feeOption");
 
+  countrySelect.addEventListener("change", function() {
+    let value = this.value;
+
+    if (value === "NG") {
+      feeOption.text = "Activation Fee – NGN 12,000";
+      feeGroup.style.display = "block";
+    } 
+    else if (value === "CM") {
+      feeOption.text = "Activation Fee – XAF 12,000";
+      feeGroup.style.display = "block";
+    } 
+    else if (value === "GH") {
+      feeOption.text = "Activation Fee – GHS 200";
+      feeGroup.style.display = "block";
+    } 
+    else {
+      feeGroup.style.display = "none";
+    }
+  });
 </script>
-
 </body>
-
 </html>
