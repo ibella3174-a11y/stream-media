@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,28 +10,28 @@
 
   <style>
     :root{
-  --bg: #061a18;
-  --card: rgba(10, 40, 38, 0.75);
-  --accent: #4fd1c5;         
-  --accent-dark: #2fb8a6; 
-  --glow: rgba(79, 209, 197, 0.35);
-  --text: #ecfffb;
-  --muted: #9fcfc6;
-  --input-bg: rgba(255,255,255,0.04);
-}
+      --bg: #061a18;
+      --card: rgba(10, 40, 38, 0.75);
+      --accent: #4fd1c5;         
+      --accent-dark: #2fb8a6; 
+      --glow: rgba(79, 209, 197, 0.35);
+      --text: #ecfffb;
+      --muted: #9fcfc6;
+      --input-bg: rgba(255,255,255,0.04);
+    }
     body {
-  margin: 0;
-  padding: 24px;
-  font-family: 'Poppins', sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(79,209,197,0.15), transparent 60%),
-    linear-gradient(135deg, #041412, #0b2f2a);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  color: var(--text);
-}
+      margin: 0;
+      padding: 24px;
+      font-family: 'Poppins', sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(79,209,197,0.15), transparent 60%),
+        linear-gradient(135deg, #041412, #0b2f2a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: var(--text);
+    }
 
     .container {
       background: rgba(0,0,0,0.55);
@@ -41,14 +42,14 @@
       backdrop-filter: blur(8px);
     }
 
-    .logo { width: 120px; }
+    .logo { width: 120px; margin-bottom: 1rem; }
     .brand-name { color: var(--accent); font-weight: 800; font-size: 1.25rem; }
 
     label { font-weight: 600; margin-bottom: 6px; display: block; }
 
     .input-group { margin-bottom: 1rem; position: relative; }
 
-    input {
+    input, select {
       width: 100%;
       padding: 0.75rem;
       border-radius: 10px;
@@ -93,8 +94,7 @@
       font-size: 0.85rem;
       color: var(--muted);
     }
-    .note a:hover {
-  text-decoration: underline;
+    .note a:hover { text-decoration: underline; }
   </style>
 </head>
 
@@ -102,9 +102,7 @@
   <div class="container">
 
     <img src="logo2.png" class="logo" />
-
-    <div class="brand-name"></div>
-
+    <div class="brand-name">Stream Africa</div>
     <h2>Create Your Account</h2>
 
     <form id="registrationForm">
@@ -140,146 +138,81 @@
         <div class="error-message" id="errPass">Password must be 6+ characters</div>
       </div>
       
-   <label>Select Country</label>
-<div class="input-group">
-  <select id="country" style="width: 100%;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.05);
-      background: var(--input-bg);
-      color: var(--text);
-      font-size: 1rem;
-    ">
-    <option value="">Choose country</option>
-    <option value="NG">Nigeria</option>
-    <option value="CM">Cameroon</option>
-    <option value="GH">Ghana</option>
-  </select>
-</div>
-<div class="input-group" id="feeGroup" style="display:none;">
-  <label>Select Plan</label>
-  <select id="fee" disabled style="width: 100%;
-      padding: 0.75rem;
-      border-radius: 10px;
-      border: 1px solid rgba(255,255,255,0.05);
-      background: var(--input-bg);
-      color: var(--text);
-      font-size: 1rem;
-    ">
-    <option id="feeOption"></option>
-  </select>
-</div>
+      <label>Select Country</label>
+      <div class="input-group">
+        <select id="country">
+          <option value="">Choose country</option>
+          <option value="NG">Nigeria</option>
+          <option value="CM">Cameroon</option>
+          <option value="GH">Ghana</option>
+        </select>
+      </div>
 
-<div class="plan" style="
-    background: linear-gradient(180deg, rgba(71,163,231,0.03), rgba(71,163,231,0.01));
-    border-radius: 10px;
-    padding: 0.9rem;
-    margin-top: 0.5rem;
-    border: 1px solid rgba(71,163,231,0.06);
-">
-  <h3 style="margin:0; color:#fff; font-size:1rem;">Premium Plan – ₦12,000</h3>
-  <p style="margin:0.5rem 0 0; font-size:0.9rem; color:var(--muted);">
-    <del>₦15,000</del>
-    <span style="color:#47a3e7; font-weight:600;"> &nbsp; Save ₦3,000</span>
-  </p>
-</div>
+      <div class="input-group" id="feeGroup" style="display:none;">
+        <label>Activation Fee</label>
+        <select id="fee" disabled>
+          <option id="feeOption"></option>
+        </select>
+      </div>
 
       <button type="submit" class="primary">Sign Up</button>
-
     </form>
                                 
     <div class="note">Secure registration | Secure payment</div>
-  
-<div class="note" style="margin-top: 1.2rem;">
-  Already have an account?
-  <a href="reward.html" style="
-    color: var(--accent);
-    font-weight: 600;
-    text-decoration: none;">
-    Login
-  </a>
-</div>
+    <div class="note" style="margin-top: 1.2rem;">
+      Already have an account?
+      <a href="reward.html" style="color: var(--accent); font-weight: 600; text-decoration: none;">
+        Login
+      </a>
+    </div>
   </div>
+
 <script>
-  document.getElementById("registrationForm").onsubmit = function(e) {
-    e.preventDefault();
+const countrySelect = document.getElementById("country");
+const feeGroup = document.getElementById("feeGroup");
+const feeOption = document.getElementById("feeOption");
 
-    let name = document.getElementById("name").value.trim();
-    let user = document.getElementById("username").value.trim();
-    let phone = document.getElementById("phone").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let pass = document.getElementById("password").value.trim();
-    let country = document.getElementById("country").value;
+countrySelect.addEventListener("change", function() {
+  const value = this.value;
+  if (value === "NG") feeOption.text = "NGN 12,000";
+  else if (value === "CM") feeOption.text = "XAF 12,000";
+  else if (value === "GH") feeOption.text = "GHS 200";
+  feeGroup.style.display = value ? "block" : "none";
+});
 
-    let selectedPlan = "";
+document.getElementById("registrationForm").onsubmit = function(e) {
+  e.preventDefault();
 
-    if (country === "NG") {
-      selectedPlan = "Nigeria – NGN 12,000";
-    } else if (country === "CM") {
-      selectedPlan = "Cameroon – XAF 12,000";
-    } else if (country === "GH") {
-      selectedPlan = "Ghana – GHS 200";
-    }
+  const name = document.getElementById("name").value.trim();
+  const user = document.getElementById("username").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const pass = document.getElementById("password").value.trim();
+  const country = countrySelect.value;
 
-    let valid = true;
+  let valid = true;
+  if (!name) { document.getElementById("errName").style.display = "block"; valid=false; } else document.getElementById("errName").style.display = "none";
+  if (!user) { document.getElementById("errUser").style.display = "block"; valid=false; } else document.getElementById("errUser").style.display = "none";
+  if (!phone || phone.length < 10) { document.getElementById("errPhone").style.display = "block"; valid=false; } else document.getElementById("errPhone").style.display = "none";
+  if (!email.includes("@")) { document.getElementById("errEmail").style.display = "block"; valid=false; } else document.getElementById("errEmail").style.display = "none";
+  if (pass.length < 6) { document.getElementById("errPass").style.display = "block"; valid=false; } else document.getElementById("errPass").style.display = "none";
+  if (!country) { alert("Please select your country"); return; }
+  if (!valid) return;
 
-    if (!name) { document.getElementById("errName").style.display = "block"; valid=false; }
-    else document.getElementById("errName").style.display = "none";
+  const selectedPlan = country === "NG" ? "Nigeria – NGN 12,000"
+                     : country === "CM" ? "Cameroon – XAF 12,000"
+                     : "Ghana – GHS 200";
 
-    if (!user) { document.getElementById("errUser").style.display = "block"; valid=false; }
-    else document.getElementById("errUser").style.display = "none";
+  const queryParams = new URLSearchParams({
+    fullname: name,
+    username: user,
+    phone: phone,
+    email: email,
+    plan: selectedPlan
+  }).toString();
 
-    if (!phone || phone.length < 10) { document.getElementById("errPhone").style.display = "block"; valid=false; }
-    else document.getElementById("errPhone").style.display = "none";
-
-    if (!email.includes("@")) { document.getElementById("errEmail").style.display = "block"; valid=false; }
-    else document.getElementById("errEmail").style.display = "none";
-
-    if (pass.length < 6) { document.getElementById("errPass").style.display = "block"; valid=false; }
-    else document.getElementById("errPass").style.display = "none";
-
-    if (!country) {
-      alert("Please select your country");
-      return;
-    }
-
-    if (!valid) return;
-
-    localStorage.setItem("userFullName", name);
-
-    const queryParams = new URLSearchParams({
-        fullname: name,
-        username: user,
-        phone: phone,
-        email: email,
-        plan: selectedPlan
-    }).toString();
-
-    window.location.href = "confirm.html?" + queryParams;
-  };
-  const countrySelect = document.getElementById("country");
-  const feeGroup = document.getElementById("feeGroup");
-  const feeOption = document.getElementById("feeOption");
-
-  countrySelect.addEventListener("change", function() {
-    let value = this.value;
-
-    if (value === "NG") {
-      feeOption.text = "Activation Fee – NGN 12,000";
-      feeGroup.style.display = "block";
-    } 
-    else if (value === "CM") {
-      feeOption.text = "Activation Fee – XAF 12,000";
-      feeGroup.style.display = "block";
-    } 
-    else if (value === "GH") {
-      feeOption.text = "Activation Fee – GHS 200";
-      feeGroup.style.display = "block";
-    } 
-    else {
-      feeGroup.style.display = "none";
-    }
-  });
+  window.location.href = "confirm.html?" + queryParams;
+};
 </script>
 </body>
 </html>
